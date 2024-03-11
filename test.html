@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--    <input id="a" type="number"> x + <input id="b" type="number"> = 0-->
+<!--    <button onclick="kq()">Ket Qua </button>-->
+<!--    <h2 id="result" ></h2>-->
+<!--    <script >-->
+<!--        function kq(){-->
+<!--            let a = document.getElementById("a").value;-->
+<!--            let b = document.getElementById("b").value;-->
+<!--            let x = -b/a;-->
+<!--            document.getElementById("result").innerHTML="nghiem x ="+x;-->
+<!--        }-->
+<!--    </script>-->
+<input id="a" type="number">
+<input id="b" type="number">
+<br>
+<button onclick="cong()">+</button>
+<button onclick="tru()">-</button>
+<button onclick="nhan()">*</button>
+<button onclick="chia()">/</button>
+<h3 id="result"> </h3>
+<script>
+    function cong(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let x = a+b;
+        document.getElementById("result").innerHTML="KQ="+x;
+    }
+    function tru(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let x = a-b;
+        document.getElementById("result").innerHTML="KQ="+x;
+    }
+    function nhan(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let x = a*b;
+        document.getElementById("result").innerHTML="KQ="+x;
+    }
+    function chia(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let x = a/b;
+        document.getElementById("result").innerHTML="KQ="+x;
+    }
+</script>
+</body>
+</html>
