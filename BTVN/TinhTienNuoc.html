@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền nước</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            align-content: center;
+            padding: 20px;
+        }
+        .box{
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        button{
+            align-content: center;
+            background-color: #45a049;
+            border-radius: 5px;
+            height: 50px;
+            width: 400px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>Tính tiền nước</h2>
+    <label for="oldnumber">Chỉ số nước cũ:</label>
+    <input type="number" id="oldnumber" placeholder="Nhập chỉ số nước cũ">
+    </br>
+    <label for="newnumber">Chỉ số nước mới:</label>
+    <input type="number" id="newnumber" placeholder="Nhập chỉ số nước mới">
+    </br>
+    <button onclick="TinhTien()">Tính tiền nước</button>
+    <h3 id="sum"></h3>
+    <h3 id="result"></h3>
+</div>
+<script>
+    function TinhTien() {
+        let oldnumber = parseInt(document.getElementById("oldnumber").value);
+        let newnumber = parseInt(document.getElementById("newnumber").value);
+        let sum = newnumber - oldnumber;
+        let result = document.getElementById("result");
+        let tongTien = 0;
+
+        if (sum <= 10) {
+            tongTien = sum * 5973;
+        } else if (sum <= 20) {
+            tongTien = (10 * 5973) + (sum - 10) * 7052;
+        } else if (sum <= 30) {
+            tongTien = (10 * 5973) + (10 * 7052) + (sum - 20) * 8669;
+        } else {
+            tongTien = (10 * 5973) + (10 * 7052) + (10 * 8669) + (sum - 30) * 15929;
+        }
+
+        document.getElementById('sum').innerText = "Tổng số nước đã sử dụng: " + sum + "m3";
+        result.innerText = "Số tiền cần thanh toán cho hóa đơn nước là: " + tongTien.toLocaleString() + " VNĐ";
+    }
+</script>
+</body>
+</html>
