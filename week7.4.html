@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="a" type="number">
+    <input id="b" type="number">
+    </br>
+    </br>
+    <button onclick="Addition()">Addition(+)</button>
+    <button onclick="Subtraction()">Subtraction(-)</button>
+    <button onclick="Mutiplication()">Mutiplication(x)</button>
+    <button onclick="Divison()">Divison(/)</button>
+    <h4 id="result"></h4>
+    <script>
+        function Addition(){
+            let a = +document.getElementById("a").value;
+            let b = +document.getElementById("b").value;
+            let x = a+b ;
+            document.getElementById("result").innerHTML="KQ="+x;
+        }
+        function Subtraction(){
+            let a = +document.getElementById("a").value;
+            let b = +document.getElementById("b").value;
+            let x = a-b ;
+            document.getElementById("result").innerHTML="KQ="+x;
+        }
+        function Mutiplication(){
+            let a = +document.getElementById("a").value;
+            let b = +document.getElementById("b").value;
+            let x = a*b ;
+            document.getElementById("result").innerHTML="KQ="+x;
+        }
+        function Divison(){
+            let a = +document.getElementById("a").value;
+            let b = +document.getElementById("b").value;
+            let x = a/b ;
+            document.getElementById("result").innerHTML="KQ="+x;
+        }
+    </script>
+</body>
+</html>
