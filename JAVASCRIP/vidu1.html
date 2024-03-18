@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label for="nam">Năm sinh </label>
+    <input id="nam" type="number">
+    <button onclick="XacDinh()"> Xác định </button>
+    <h5 id="result"></h5>
+    <script>
+        function XacDinh(){
+            let nam = +document.getElementById("nam").value;
+            let Age = 2024 - nam ;
+            let result = document.getElementById("result");
+
+            if (Age >= 18){
+                result.innerHTML=("Nguoi truong thanh ")
+            }else {
+                result.innerHTML=("Nguoi chua truong thanh ")
+            }
+        }
+    </script>
+</body>
+</html>
