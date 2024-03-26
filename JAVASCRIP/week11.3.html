@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyên tập 1</title>
+</head>
+<body>
+    <button id="play" onclick="play()">Play</button>
+    <script>
+        // Bài 1 : Sử dụng vòng lặp để đếm từ 1 đến 100.
+        // Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+        // for( let i = 1 ; i < 100 ; i++){
+        //     document.write(i)
+        //     if (i==99) {
+        //         alert("Đã hoàn thành ")
+        //     }
+        // }
+
+
+        //Bài 2 :  Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+        // let i =1 ;
+        // let j = 1 ;
+        // let z = i + j ;
+        // for ( let a = 0 ; a < 21 ; a ++ ){
+        //     z = i + j ;
+        //     i = j ;
+        //     j = z ;
+        //     document.write(z + "</br>")
+        // }
+
+
+
+        // Bai 3 : Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại
+        // được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100,
+        // yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20,
+        // yêu cầu người dùng tăng nhiệt độ.
+        // let a = +prompt("Nhập nhiệt độ hiện tại : ");
+        // if ( a > 100){
+        //     let a = +prompt("Yêu cầu người dug giảm nhiệt độ ")
+        // }else if (a <20){
+        //     let a = +prompt("Yeu cau nguoi dung tang nhiet do ")
+        // }else {
+        //     alert("Hop le")
+
+
+        // Bài 4 : Tìm số đầu tiên trong dãy fibonacci chia hết cho 5
+        // let i = 1;
+        // let j = 1;
+        // let z = i + j;
+        //
+        // for (let a = 0; a < 10; a++) {
+        //     z = i + j;
+        //     i = j;
+        //     j = z;
+        //     if (z % 5 === 0) {
+        //         document.write("Số đầu tiên trong dãy Fibonacci chia hết cho 5 là : " + z);
+        //         break;
+        //     }
+        // }
+
+
+        // Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+        // let i = 1;
+        // let j = 1;
+        // let z = i + j;
+        // let total = 2 ;
+        //
+        // for (let a = 2; a < 20; a++) {
+        //     z = i + j;
+        //     i = j;
+        //     j = z;
+        //     total += z ;
+        // }
+        // document.write("Tổng 20 số đầu " + total );
+
+
+        // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+        // let total = 0 ;
+        // let count = 0 ;
+        // for (let i = 1 ; i <=100 ; i++){
+        //     if ( i % 7 ===0 ){
+        //         total += i;
+        //         count ++ ;
+        //         if ( count === 30){
+        //             break;
+        //         }
+        //     }
+        // }
+        // document.write("dap an "+ total);
+
+
+
+        // Bài 7 :  Hãy viết một chương trình in ra các số từ 1 đến 100.
+        // Nhưng nếu số chia hết cho 3 thì in ra "Fizz",
+        // 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết
+        // cho cả 3 và 5 thì in ra chữ "FizzBuzz"
+        // for ( let i = 1 ; i <= 100 ; i ++ ){
+        //     if (i%3 ===0 && i % 5 ===0){
+        //         document.write("FizzBuzz"+"<br>")
+        //     }else if (i % 5 === 0){
+        //         document.write("Buzz" + "</br>");
+        //     }else if (i%3 ===0 ){
+        //         document.write("Fizz"+"<br>")
+        //     }else {
+        //         document.write(i + "</br>");
+        //     }
+        // }
+        // Bài 8 :
+        function play() {
+            let number_min = +prompt("Bạn muốn đoán trong khoảng nhỏ nhất là bao nhiêu? ");
+            let number_max = +prompt("Bạn muốn đoán trong khoảng lớn nhất là bao nhiêu? ");
+            let number_random = Math.floor(Math.random() * (number_max - number_min + 1)) + number_min;
+            let count = 0;
+
+            while (count < 3) {
+                let num = +prompt("Nhập số bạn đoán: ");
+                count++;
+
+                if (num === number_random) {
+                    alert("Chúc mừng! Bạn đã đoán đúng số sau " + count + " lần đoán.");
+                    return;
+                } else if (num > number_random) {
+                    alert("Số bạn đoán lớn hơn số cần đoán. Bạn còn " + (3 - count) + " lần đoán.");
+                } else {
+                    alert("Số bạn đoán nhỏ hơn số cần đoán. Bạn còn " + (3 - count) + " lần đoán.");
+                }
+            }
+
+            alert("Bạn đã hết số lần đoán. Số cần đoán là: " + number_random);
+        }
+    </script>
+</body>
+</html>
